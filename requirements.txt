@@ -3,8 +3,8 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-azure-storage-blob
-# azure
+# azure-storage-blob==12.19.0
+azure.storage.blob
 joblib==1.4.2
 cachetools
 pandas

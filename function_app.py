@@ -11,7 +11,7 @@ import tempfile
 from io import StringIO
 from typing import Dict, List, Union, Tuple
 import sys
-import uvicorn
+# import uvicorn
 
 cache = cachetools.LRUCache(maxsize=2)
 

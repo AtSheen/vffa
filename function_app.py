@@ -1,6 +1,5 @@
 import azure.functions as func
 import logging
-from azure.storage.blob import BlobServiceClient
 import pandas as pd
 import numpy as np
 from io import BytesIO
@@ -12,7 +11,7 @@ import tempfile
 from io import StringIO
 from typing import Dict, List, Union, Tuple
 import sys
-# import uvicorn
+
 
 cache = cachetools.LRUCache(maxsize=2)
 

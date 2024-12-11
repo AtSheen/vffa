@@ -11,26 +11,12 @@ import tempfile
 from io import StringIO
 from typing import Dict, List, Union, Tuple
 import sys
-# import uvicorn
 
-cache = cachetools.LRUCache(maxsize=2)
+
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
-connection_string = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
-container_name = os.getenv('AZURE_STORAGE_CONTAINER_NAME')
-ml_invocations_filename = 'ml_invocations.csv'
 
-category_config_file_blob_name = 'categorical_config.dict'
-model_pickle_file = 'model.pkl'
-attention_file_blob_name = "Attention list.xlsx"
-ip_vat_blob_name = "IP & VAT Issues Consolidation.csv"
-historical_metadata_blob_name = "historical_metadata.csv"
-vendor_details_blob_name = "Vendor Name and Country.xlsx"
-company_code_details_blob_name = "Company Code and Country.xlsx"
-tax_code_description_blob_name = "Tax code mapping_CAP.xlsx"
-tax_code_info_blob_name = "Tax Code Info.xlsx"
-legal_entities_blob_name = "same_legal_entity_combinations.csv"
 
 class NumpyEncoder(json.JSONEncoder):
     def default(self, obj):
